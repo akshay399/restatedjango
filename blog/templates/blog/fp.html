@@ -1,0 +1,45 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block content %}
+
+<style type="text/css">
+    .br { 
+           display: block; 
+           margin-bottom: 5em; 
+       } 
+
+   table, th, td {
+
+     border: 1px solid white;
+     border-collapse: collapse;
+   }
+   th, td {
+     padding: 5px;
+     text-align: left;
+   }
+</style>
+
+<span id="f1" class="br"></span>
+<h1 style="background-color:rgb(255, 255, 255);">Plan 1</h1>
+<img src="{% static 'blog/fp1.jpg' %}">
+
+<span id="f2" class="br"></span> 
+<h1 style="background-color:rgb(255, 255, 255);">Plan 2</h1>
+<img src="{% static 'blog/fp2.jpg' %}">
+
+<span id="f3" class="br"></span> 
+<h1 style="background-color:rgb(255, 255, 255);">Plan 3</h1>
+<img src="{% static 'blog/fp3.jpg' %}">
+
+<span id="f4" class="br"></span> 
+<h1 style="background-color:rgb(255, 255, 255);">Plan 4</h1>
+<img src="{% static 'blog/fp4.jpg' %}">
+
+<span id="f5" class="br"></span> 
+<h1 style="background-color:rgb(255, 255, 255);">Plan 5</h1>
+<img src="{% static 'blog/fp1.jpg' %}">
+
+
+
+{% endblock content %}

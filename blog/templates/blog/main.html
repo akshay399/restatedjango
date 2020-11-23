@@ -1,0 +1,324 @@
+{% load static %}
+{% load custom_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Real Estate Site</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/searchbar.css' %}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+    <div id="header-hero-container">
+        <header>
+            <div class="flex container">
+                <a id="logo" href="#">RESTATE</a>
+                <nav>
+                    <button id="nav-toggle" class="hamburger-menu">
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                    </button>
+
+                    <ul id="nav-menu">
+
+                        {% if user.is_authenticated %}
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#testimonials">Experts</a></li>
+                        <li><a href="{% url 'blog-home' %}">News/Blogs</a></li>
+                        <li><a href="{% url 'blog-mapp' %}">Map</a></li>
+                        <li><a href="#xyz">Contact</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li id="close-flyout"><span class="fas fa-times"></span></li>
+              {% else %}
+              <li><a href="#properties">Properties</a></li>
+              <li><a href="#testimonials">Experts</a></li>
+              <li><a href="{% url 'blog-home' %}">News/Blogs</a></li>
+              <li><a href="{% url 'blog-mapp' %}">Map</a></li>
+              <li><a href="#xyz">Contact</a></li>
+              <li><a href="{% url 'login' %}">Login</a></li>
+              <li><a href="{% url 'register' %}">Register</a></li>
+              <li id="close-flyout"><span class="fas fa-times"></span></li>
+              {% endif %}
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <section id="hero">
+            <div class="fade"></div>
+            <div class="hero-text">
+                <h1>Welcome to our site</h1>
+                <p>No. 1 Property Portal </p>
+                <p>
+                    <br>
+                </p>
+                <form action="">
+                    <input type="search" placeholder="Enter place or landmark">
+                    <i class="fa fa-search"></i>
+                </form>
+            </div>
+        </section>
+    </div>
+
+
+    <section id="properties">
+        <div class="container">
+            <h2>Properties</h2>
+            <div id="properties-slider" class="slick">
+                <div>
+                    <a href="{% anchor 'blog-fp' 'f1' %}"><img src="https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-1.2.1&auto=format&fit=crop&w=625&q=80" alt="Property 1" /></a>
+                    <div class="property-details">
+                        <p class="price">Rs 34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            M 7, Midc Ind Area, Taloja, Navi Mumbai
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="{% anchor 'blog-fp' 'f2' %}"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80" alt="Property 1" /></a>
+                    <div class="property-details">
+                        <p class="price">Rs 34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            317 , Ashirwad Indl Estate, Ram Mandir Road, Goregaon (west)
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="{% anchor 'blog-fp' 'f3' %}"><img src="https://images.unsplash.com/photo-1568391300292-a5a1d96b82aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1856&q=80" alt="Property 1" /></a>
+                    <div class="property-details">
+                        <p class="price">Rs 34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            350 , Oswal Bhavan, J D Rd, Nanachowk, Tardeo
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="{% anchor 'blog-fp' 'f4' %}"><img src="https://images.unsplash.com/photo-1568314735654-32fb53a5c886?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1872&q=80" alt="Property 1" /></a>
+                    <div class="property-details">
+                        <p class="price">Rs 34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            46 , Opp Toyota Showroom, Vinayak Apt, Link Road, Malad (west)
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="{% anchor 'blog-fp' 'f1' %}"><img src="https://images.unsplash.com/photo-1568391300292-a5a1d96b82aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1856&q=80" alt="Property 1" /></a>
+                    <div class="property-details">
+                        <p class="price">Rs 34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            233 , No , Jolly Bhavan, New Marine Lines, New Marine Lines
+                        </address>
+                    </div>
+                </div>
+            </div>
+
+            <button class="rounded">View All Property Listings</button>
+        </div>
+    </section>
+
+
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Clients Are Saying</h2>
+            <div id="testimonials-slider">
+                <div>
+                    <blockquote>
+                        <p>"Very feasible and user friendly."</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_7.jpg" alt="Client 7" />
+                        <p>Ankur Mehta</p>
+                    </div>
+                </div>
+
+                <div>
+                    <blockquote>
+                        <p>"Scope of development there, still a tough competiotion for others in market"</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_5.jpg" alt="Client 7" />
+                        <p>Alex Joseph</p>
+                    </div>
+                </div>
+
+                <div>
+                    <blockquote>
+                        <p>"Very feasible and user friendly."</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_8.jpg" alt="Client 7" />
+                        <p>Fran Goldsmith</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+
+    <footer id="xyz">
+        <div class="flex container">
+            <div class="footer-about">
+                <h5>About RESTATE</h5>
+                <p>We sort down the best nearby properties for you which helps your your time and money by not hiring any middle man.</p>
+            </div>
+
+            <div class="footer-quick-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-subscribe">
+
+
+                <h5 class="follow-us">Follow Us</h5>
+                <ul>
+                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <small>
+            Copyright &copy; 2020 All rights reserved 
+        </small>
+    </footer>
+
+
+
+
+    <script>
+        $(function () {
+            let headerElem = $('header');
+            let logo = $('#logo');
+            let navMenu = $('#nav-menu');
+            let navToggle = $('#nav-toggle');
+
+           $('#properties-slider').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                prevArrow: '<a href="#" class="slick-arrow slick-prev">previous</a>',
+                nextArrow: '<a href="#" class="slick-arrow slick-next">next</a>',
+                responsive: [
+                    {
+                        breakpoint: 1100,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                        }
+                    },
+                    {
+                        breakpoint: 530,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                        }
+                    }
+                ]
+           });
+
+           $('#testimonials-slider').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<a href="#" class="slick-arrow slick-prev"><</a>',
+                nextArrow: '<a href="#" class="slick-arrow slick-next">></a>'
+           });
+
+           navToggle.on('click', () => {
+               navMenu.css('right', '0');
+           });
+
+           $('#close-flyout').on('click', () => {
+                navMenu.css('right', '-100%');
+           });
+
+           $(document).on('click', (e) => {
+               let target = $(e.target);
+               if (!(target.closest('#nav-toggle').length > 0 || target.closest('#nav-menu').length > 0)) {
+                   navMenu.css('right', '-100%');
+               }
+           });
+
+          $(document).scroll(() => {
+               let scrollTop = $(document).scrollTop();
+
+               if (scrollTop > 0) {
+                   navMenu.addClass('is-sticky');
+                   logo.css('color', '#000');
+                   headerElem.css('background', '#fff');
+                   navToggle.css('border-color', '#000');
+                   navToggle.find('.strip').css('background-color', '#000');
+               } else {
+                   navMenu.removeClass('is-sticky');
+                   logo.css('color', '#fff');
+                   headerElem.css('background', 'transparent');
+                   navToggle.css('bordre-color', '#fff');
+                   navToggle.find('.strip').css('background-color', '#fff');
+               }
+
+               headerElem.css(scrollTop >= 200 ? {'padding': '0.5rem', 'box-shadow': '0 -4px 10px 1px #999'} : {'padding': '1rem 0', 'box-shadow': 'none' });
+           });
+
+           $(document).trigger('scroll');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block content %}
+  
+ 
+      <img src="{% static 'blog/world.png' %}" usemap="#world" >
+      <map name="world">
+          <area shape="circle" coords="115,360,50" href="{% anchor 'blog-listt' 's1' %}">
+          <area shape="circle" coords="118,464,40" href="{% anchor 'blog-listt' 's2' %}">
+          <area shape="circle" coords="163,531,30" href="{% anchor 'blog-listt' 's3' %}">
+          <area shape="circle" coords="124,543,20" href="{% anchor 'blog-listt' 's4' %}">
+          <area shape="circle" coords="254,318,23" href="{% anchor 'blog-listt' 's5' %}">
+          <area shape="circle" coords="180,282,40" href="{% anchor 'blog-listt' 's6' %}">
+          <area shape="circle" coords="57,288,35" href="{% anchor 'blog-listt' 's7' %}">
+          <area shape="circle" coords="108,212,50" href="{% anchor 'blog-listt' 's8' %}">
+          <area shape="circle" coords="153,165,20" href="{% anchor 'blog-listt' 's9' %}">
+          <area shape="circle" coords="173,173,6" href="{% anchor 'blog-listt' 's10' %}">
+          <area shape="circle" coords="146,131,19" href="{% anchor 'blog-listt' 's11' %}">
+          <area shape="circle" coords="180,111,20" href="{% anchor 'blog-listt' 's12' %}">
+          <area shape="circle" coords="212,150,26" href="{% anchor 'blog-listt' 's13' %}">
+
+          
+      </map>
+
+      <style>
+        img {
+          display: block;
+          margin-left: 300px;
+          position: static;
+          background-attachment: fixed;
+          }
+        </style>
+        
+ 
+
+{% endblock content %}
